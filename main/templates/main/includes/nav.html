@@ -1,0 +1,14 @@
+<nav class="main-nav">
+    <div class="nav-container">
+        <ul class="nav-links">
+            <a href="{% url 'main:index' %}">Главная</a>
+            <a href="{% url 'main:portfolio' %}">Портфолио</a>
+            <a href="{% url 'main:services' %}">Услуги</a>
+            <a href="{% url 'main:testimonials' %}">Отзывы</a>
+            <a href="{% url 'main:contacts' %}">Контакты</a>
+            {% if user.is_authenticated and user.is_staff %}
+                <li><a href="{% url 'admin:index' %}">Настройки</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
